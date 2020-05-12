@@ -1,16 +1,20 @@
 import React from "react";
 import { Todo } from "../redux/actions";
 
-interface AppProps {
+interface TodosListProps {
   todos: Todo[];
 }
 
-export const TodosList = ({ todos }: AppProps) => {
-  return (
-    <div>
-      {todos.map((todo) => (
-        <p>{todo}</p>
+export const TodosList = ({ todos }: TodosListProps) => {
+  const todosList = todos.length ? (
+    <ul>
+      {todos.map((todo, i) => (
+        <li key={i}>{todo}</li>
       ))}
-    </div>
+    </ul>
+  ) : (
+    <p>All done!</p>
   );
+
+  return todosList;
 };

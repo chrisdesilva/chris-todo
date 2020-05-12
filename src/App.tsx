@@ -1,12 +1,15 @@
 import React from "react";
-import { AddTodo } from "./containers/AddTodo";
+import { Todos } from "./containers/Todos";
 import "./App.css";
+
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 function App() {
   return (
-    <div className="App">
-      <AddTodo />
-    </div>
+    <Provider store={store}>
+      <Todos />
+    </Provider>
   );
 }
 
