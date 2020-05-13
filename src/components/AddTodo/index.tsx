@@ -22,6 +22,7 @@ const _AddTodo: FunctionComponent<AddTodoProps> = ({
         aria-label="description"
         value={description}
         onChange={handleDescriptionChange}
+        required
       />
       <button data-testid="submit" type="submit">
         Add Todo

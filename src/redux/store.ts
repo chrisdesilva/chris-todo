@@ -1,29 +1,29 @@
-import { createStore, applyMiddleware, combineReducers, compose } from "redux";
-import thunk from "redux-thunk";
-import todoReducer from "./reducers/todoReducer";
-import { Todo } from "./actions";
+// import { createStore, applyMiddleware, combineReducers, compose } from "redux";
+// import thunk from "redux-thunk";
+// import todoReducer from "./reducers/todoReducer";
+// import { Todo } from "./actions";
 
-export const initialState = {};
+// export const initialState = {};
 
-const middleware = [thunk];
+// const middleware = [thunk];
 
-export interface StoreState {
-  todos: Todo[];
-}
+// export interface StoreState {
+//   todos: Todo[];
+// }
 
-const reducers = combineReducers<StoreState>({
-  todos: todoReducer,
-});
+// const reducers = combineReducers<StoreState>({
+//   todos: todoReducer,
+// });
 
-declare global {
-  interface Window {
-    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
-  }
-}
+// declare global {
+//   interface Window {
+//     __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+//   }
+// }
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const enhancer = composeEnhancers(applyMiddleware(...middleware));
-const store = createStore(reducers, initialState, enhancer);
+// const enhancer = composeEnhancers(applyMiddleware(...middleware));
+// const store = createStore(reducers, initialState, enhancer);
 
-export default store;
+// export default store;
