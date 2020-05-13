@@ -1,10 +1,10 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
-import { TodosList } from "../components/TodosList";
+import { TodosList } from "../../components/TodosList";
 
 import { connect } from "react-redux";
-import { StoreState } from "../redux/store";
-import { Todo, addTodo } from "../redux/actions";
-import { AddTodo } from "../components/AddTodo";
+import { StoreState } from "../../redux/store";
+import { Todo, addTodo } from "../../redux/actions";
+import { AddTodo } from "../../components/AddTodo";
 
 export interface TodosProps {
   todos: Todo[];

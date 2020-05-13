@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent } from "react";
+import React, { ChangeEvent, FormEvent, FunctionComponent } from "react";
 
 export interface AddTodoProps {
   description: string;
@@ -6,11 +6,11 @@ export interface AddTodoProps {
   handleAddTodo: (e: FormEvent) => void;
 }
 
-const _AddTodo = ({
+const _AddTodo: FunctionComponent<AddTodoProps> = ({
   description,
   handleAddTodo,
   handleDescriptionChange,
-}: AddTodoProps): JSX.Element => {
+}) => {
   return (
     <form data-testid="add-todo-form" onSubmit={handleAddTodo}>
       <label htmlFor="description">Todo</label>

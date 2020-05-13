@@ -7,3 +7,7 @@ test("empty todo list should render all done text", () => {
   const noTodos = getByText(/all done!/i);
   expect(noTodos).toBeInTheDocument();
 });
+
+// test("todos length should increase by one after item is added", () => {
+
+// })
