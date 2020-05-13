@@ -3,11 +3,11 @@ import { Todos } from "./containers/Todos";
 import "./App.css";
 
 import { Provider } from "react-redux";
-import store from "./core/frameworks";
+import { configureStore } from "./core/frameworks";
 
 function App() {
   return (
-    <Provider store={store}>
+    <Provider store={configureStore()}>
       <Todos />
     </Provider>
   );

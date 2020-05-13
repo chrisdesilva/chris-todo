@@ -1,5 +1,5 @@
 import React from "react";
-import { Todo } from "../../redux/actions";
+import { Todo } from "../../core/entities";
 
 interface TodosListProps {
   todos: Todo[];
