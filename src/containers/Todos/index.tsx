@@ -21,7 +21,12 @@ const _Todos = (props: TodosProps): JSX.Element => {
 
   const handleAddTodo = (e: FormEvent) => {
     e.preventDefault();
-    props.addTodo(description);
+    const newTodo = {
+      description,
+      id: Math.floor(Math.random() * 100000000),
+      completed: false,
+    };
+    props.addTodo(newTodo);
     setDescription("");
   };
   return (

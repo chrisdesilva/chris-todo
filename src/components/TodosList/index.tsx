@@ -8,8 +8,8 @@ interface TodosListProps {
 export const TodosList = ({ todos }: TodosListProps) => {
   const todosList = todos.length ? (
     <ul>
-      {todos.map((todo, i) => (
-        <li key={i}>{todo}</li>
+      {todos.map((todo) => (
+        <li key={todo.id}>{todo.description}</li>
       ))}
     </ul>
   ) : (
