@@ -17,7 +17,7 @@ test("todo list with at least one item should not render all done text", () => {
 });
 
 test("todos list should display all todos", () => {
-  const { queryAllByText } = render(
+  const { getAllByText } = render(
     <TodosList
       todos={[
         { description: "todo one", completed: false, id: 1 },
@@ -25,6 +25,6 @@ test("todos list should display all todos", () => {
       ]}
     />
   );
-  const todos = queryAllByText("todo");
+  const todos = getAllByText(/todo/i);
   expect(todos).toHaveLength(2);
 });

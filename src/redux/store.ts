@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import todoReducer from "./reducers/todoReducer";
 import { Todo } from "./actions";
 
-const initialState = {};
+export const initialState = {};
 
 const middleware = [thunk];
 

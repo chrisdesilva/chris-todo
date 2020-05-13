@@ -19,6 +19,7 @@ const _AddTodo: FunctionComponent<AddTodoProps> = ({
         id="description"
         data-testid="description"
         name="description"
+        aria-label="description"
         value={description}
         onChange={handleDescriptionChange}
       />

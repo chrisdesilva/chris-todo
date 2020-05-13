@@ -29,16 +29,3 @@ test("it should show a blank form to add item to todo list", async () => {
     description: "",
   });
 });
-
-test("it should allow the user to add a todo", () => {
-  const { input } = renderAddTodoForm();
-  fireEvent.change(input, { target: { value: "new todo" } });
-  expect(input.value).toBe("new todo");
-});
-
-test("it should fire an onchange event wen the user enters text in the description", () => {
-  const handleDescriptionChange = jest.fn();
-  const { input } = renderAddTodoForm();
-  fireEvent.change(input, { target: { value: "TEST VALUE" } });
-  expect(handleDescriptionChange).toHaveBeenCalledTimes(1);
-});
