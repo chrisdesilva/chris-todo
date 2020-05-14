@@ -4,12 +4,14 @@ import { TodosList } from "../../components/TodosList";
 import { connect } from "react-redux";
 import { StoreState } from "../../core/frameworks";
 import { Todo } from "../../core/entities";
-import { addTodo } from "../../core/adapters";
+import { addTodo, completeTodo } from "../../core/adapters";
 import { AddTodo } from "../../components/AddTodo";
+import styles from "./index.module.scss";
 
 export interface TodosProps {
   todos: Todo[];
   addTodo: Function;
+  completeTodo: Function;
 }
 
 const _Todos = (props: TodosProps): JSX.Element => {
@@ -30,15 +32,23 @@ const _Todos = (props: TodosProps): JSX.Element => {
     props.addTodo(newTodo);
     setDescription("");
   };
+
+  const handleTodoCompleted = (id: number) => {
+    props.completeTodo(id);
+  };
+
   return (
-    <div>
+    <div className={styles.container}>
       <h1>Todo List</h1>
       <AddTodo
         description={description}
         handleDescriptionChange={handleDescriptionChange}
         handleAddTodo={handleAddTodo}
       />
-      <TodosList todos={props.todos} />
+      <TodosList
+        handleTodoCompleted={handleTodoCompleted}
+        todos={props.todos}
+      />
     </div>
   );
 };
@@ -47,4 +57,6 @@ const mapStateToProps = ({ todos }: StoreState): { todos: Todo[] } => {
   return { todos };
 };
 
-export const Todos = connect(mapStateToProps, { addTodo })(_Todos);
+export const Todos = connect(mapStateToProps, { addTodo, completeTodo })(
+  _Todos
+);

@@ -5,12 +5,12 @@ import "./App.css";
 import { Provider } from "react-redux";
 import { configureStore } from "./core/frameworks";
 
-function App() {
+const App = () => {
   return (
     <Provider store={configureStore()}>
       <Todos />
     </Provider>
   );
-}
+};
 
 export default App;

@@ -1,4 +1,5 @@
 import React, { ChangeEvent, FormEvent, FunctionComponent } from "react";
+import styles from "./index.module.scss";
 
 export interface AddTodoProps {
   description: string;
@@ -12,7 +13,11 @@ const _AddTodo: FunctionComponent<AddTodoProps> = ({
   handleDescriptionChange,
 }) => {
   return (
-    <form data-testid="add-todo-form" onSubmit={handleAddTodo}>
+    <form
+      data-testid="add-todo-form"
+      onSubmit={handleAddTodo}
+      className={styles.form}
+    >
       <label htmlFor="description">Todo</label>
       <input
         type="text"
@@ -22,6 +27,7 @@ const _AddTodo: FunctionComponent<AddTodoProps> = ({
         aria-label="description"
         value={description}
         onChange={handleDescriptionChange}
+        placeholder="Add todo..."
         required
       />
       <button data-testid="submit" type="submit">

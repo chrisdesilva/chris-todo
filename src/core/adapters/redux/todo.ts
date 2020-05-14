@@ -1,9 +1,12 @@
 import { Todo } from "../../entities";
 
 const ADD_TODO = "addTodo";
+const COMPLETE_TODO = "completeTodo";
 
 export interface ActionType {
   type: string;
+  todo: Todo | null;
+  id: number | null;
 }
 
 export interface AddTodoActionType {
@@ -11,41 +14,29 @@ export interface AddTodoActionType {
   todo: Todo;
 }
 
+export interface CompleteTodoActionType {
+  type: string;
+  id: number;
+}
+
 export const addTodo = (todo: Todo): AddTodoActionType => ({
   type: ADD_TODO,
   todo,
 });
 
-export const todoReducer = (state: Todo[] = [], action: AddTodoActionType) => {
+export const completeTodo = (id: number): CompleteTodoActionType => ({
+  type: COMPLETE_TODO,
+  id,
+});
+
+export const todoReducer = (state: Todo[] = [], action: ActionType) => {
   switch (action.type) {
     case ADD_TODO:
       return [action.todo, ...state];
+    case COMPLETE_TODO:
+      const item = state.filter((todo) => todo.id !== action.id);
+      return item;
     default:
       return state;
   }
 };
-
-// export default (state: Todo[] = [], action: AddTodoActionType) => {
-
-//   }
-// };
-
-// import { Dispatch } from "redux";
-// import { ActionTypes } from "../types";
-
-// export interface Todo {
-//   id: number;
-//   description: string;
-//   completed: boolean;
-// }
-
-// export interface AddTodoAction {
-//   type: ActionTypes.addTodo;
-//   payload: Todo;
-// }
-
-// export const addTodo = (todo: Todo) => {
-//   return (dispatch: Dispatch) => {
-//     dispatch<AddTodoAction>({ type: ActionTypes.addTodo, payload: todo });
-//   };
-// };

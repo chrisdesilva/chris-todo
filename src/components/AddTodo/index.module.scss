@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  box-shadow: 1px 1px #0d0d0d, 2px 2px #0d0d0d, 3px 3px #0d0d0d;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  button {
+    width: 6rem;
+    margin: 1rem auto;
+    border: none;
+    background-color: #0d0d0d;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+
+  label,
+  input {
+    width: 10rem;
+    margin: 0 auto;
+    padding: 0.5rem;
+  }
+}

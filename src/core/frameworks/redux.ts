@@ -6,7 +6,7 @@ import { Todo } from "../entities";
 export interface StoreState {
   todos: Todo[];
 }
-const reducers = combineReducers<StoreState>({
+const reducers = combineReducers({
   todos: todoReducer,
 });
 
