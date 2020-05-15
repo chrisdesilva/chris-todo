@@ -34,8 +34,9 @@ export const todoReducer = (state: Todo[] = [], action: ActionType) => {
     case ADD_TODO:
       return [action.todo, ...state];
     case COMPLETE_TODO:
-      const item = state.filter((todo) => todo.id !== action.id);
-      return item;
+      const item = state.filter((todo) => todo.id === action.id)[0];
+      item.completed = !item.completed
+      return [...state]
     default:
       return state;
   }

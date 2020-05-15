@@ -8,13 +8,13 @@ import { addTodo, completeTodo } from "../../core/adapters";
 import { AddTodo } from "../../components/AddTodo";
 import styles from "./index.module.scss";
 
-export interface TodosProps {
+export interface Props {
   todos: Todo[];
   addTodo: Function;
   completeTodo: Function;
 }
 
-const _Todos = (props: TodosProps): JSX.Element => {
+const _Todos = (props: Props): JSX.Element => {
   const [description, setDescription] = useState("");
 
   const handleDescriptionChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -47,7 +47,6 @@ const _Todos = (props: TodosProps): JSX.Element => {
       />
       <TodosList
         handleTodoCompleted={handleTodoCompleted}
-        todos={props.todos}
       />
     </div>
   );

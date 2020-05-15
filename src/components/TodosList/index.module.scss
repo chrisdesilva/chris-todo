@@ -13,10 +13,11 @@
   box-shadow: 1px 1px #0d0d0d, 2px 2px #0d0d0d, 3px 3px #0d0d0d;
 }
 .done {
-  border: 1px solid red;
-  box-shadow: 1px 1px #0d0d0d, 2px 2px #0d0d0d, 3px 3px #0d0d0d;
+  border: 1px solid green;
+  box-shadow: 1px 1px #5ac700, 2px 2px #5ac700, 3px 3px #5ac700;
   background-color: black;
   color: white;
+  text-decoration: line-through;
 }
 
 .item {
@@ -25,4 +26,6 @@
   padding: 2rem;
   text-align: center;
   list-style-type: none;
+  transition: background-color 300ms, color 300ms;
+  cursor: pointer;
 }
